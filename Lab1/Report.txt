@@ -1,0 +1,6 @@
+Report
+1- Python function enumerate()
+Show what it does, how it works, and support your answer with an example.
+2- Lambda expression
+#Anonymous function3- Import operator module and explore its functions
+
