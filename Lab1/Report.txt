@@ -1,6 +1,23 @@
 Report
 1- Python function enumerate()
 Show what it does, how it works, and support your answer with an example.
+
+The enumerate function in Python converts a data collection object into an enumerate object. 
+Enumerate returns an object that contains a counter 
+as a key for each value within an object, making items within the collection easier to access.
+______________
+
+snekTuple = ("cobra","viper","snek")
+for i in enumerate(snekTuple):
+print(i)
+
 2- Lambda expression
 #Anonymous function3- Import operator module and explore its functions
+
+The power of lambda is better shown when you use them as an anonymous function inside another function.
+
+Say you have a function definition that takes one argument, and that argument will be multiplied with an unknown number:
+
+def myfunc(n):
+  return lambda a : a * n
 
