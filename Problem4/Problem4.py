@@ -1,14 +1,13 @@
 # Problem 4
 # notice this function is not optimized and the sole purpose is getting familiar with python's syntax
 
+import sys;
 def textfileToCleanArray(file_name):
       f = open(file_name, "r")
       text=f.read()
       text=text.lower().strip()
       textAsArray=text.split(' ')
       return textAsArray;
-
-
 
 
 def top20RepeatedWords(textAsArray):
@@ -35,7 +34,7 @@ def top_20_repeated_word_finder_and_writer(file_name):
       mostRepeatedWordsArray=top20RepeatedWords(textAsArray)
       fileWriter(mostRepeatedWordsArray)
       
-top_20_repeated_word_finder_and_writer("textfile.txt")
+top_20_repeated_word_finder_and_writer(sys.argv[1])
 
 
 # problem 4 done
