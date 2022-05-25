@@ -20,14 +20,13 @@ def createEmployee():
     salary=int(input("salary:"))
     return Employee(name,money,sleepmood,health,workMood,Ismanager,email,salary)
     
-printMenu()
 inputx=0
 while(inputx !=  'q'):
     printMenu()
     inputx=input("Please Enter the corresponding number ( q to quit): ")
     if(inputx == 'q'):
         break;
-        
+
     if(inputx=='1'):#hire 
         emp=createEmployee()
         myOffice.hire(emp)
