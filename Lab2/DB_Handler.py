@@ -1,5 +1,5 @@
 import mysql.connector
- 
+# from EmployeeClass import Employee
 class DBConnection():
     def __init__(self):
         self.mydb = mysql.connector.connect(
@@ -25,9 +25,9 @@ class DBConnection():
     def dbInesrtEmployee(self,Employee):
         cursor = self.mydb.cursor()
         cursor.execute(f"""
-        INSERT INTO Employee (full_name, money,sleepmood,healthRate,salary,email)
-        VALUES ('%s', %s, '%s', %s, %s, '%s');
-        """% (Employee.full_name, Employee.money, Employee.sleepmood ,Employee.healthRate, Employee.salary , Employee.email)
+        INSERT INTO Employee (full_name, money,sleepmood,healthRate,is_manager,salary,email)
+        VALUES ('%s', %s, '%s', %s,%s, %s, '%s');
+        """% (Employee.full_name, Employee.money, Employee.sleepmood ,Employee.healthRate,Employee.is_manager, Employee.salary , Employee.email)
         )
         self.mydb.commit()
         print(cursor.rowcount, "record inserted.")
@@ -37,10 +37,13 @@ class DBConnection():
     def dbDeleteEmployee(self,id):
         cursor = self.mydb.cursor()
         cursor.execute(f"DELETE FROM `Employee` WHERE `id` = {id}")
-        employee = cursor.fetchall()
-        return employee
+        
+        self.mydb.commit()
 
-db=DBConnection()
+        # employee = cursor.fetchall()
+        # return employee
+
+# db=DBConnection()
 # print(db.dbGetAllEmployees())
 # print(db.dbGetEmployee(1))
         
