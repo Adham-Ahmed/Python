@@ -1,1 +1,1 @@
-[python.gif]
+![](python.gif)
